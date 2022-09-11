@@ -1,0 +1,26 @@
+## Interface: 30400
+## Interface-Classic: 11403
+## Version: @project-version@
+## Author: datagutten
+## X-Website: https://github.com/Beast-Masters-addons/StatCompare
+## Title: StatCompare
+## Notes: Compare item stats
+
+
+# X-WoWI-ID:
+# X-Wago-ID:
+
+#@no-lib-strip@
+libs.xml
+
+## OptionalDeps: BM-utils
+#@end-no-lib-strip@
+
+#@non-no-lib-strip@
+# ## Dependencies: LibStub, BM-utils
+#@end-non-no-lib-strip@
+
+addon\common.lua
+addon\utils.lua
+addon\tooltip_parser.lua
+addon\tooltip.lua
