@@ -43,6 +43,8 @@ function tooltip:show_diff(frame, diff)
             else
                 value = addon.BMUtils:colorize((format):format(v), 255, 0, 0)
             end
+            value = self.addon.utils.formatFloat(value)
+
             local text = ('%s %s'):format(value, addon.BMUtils:colorize(_G[stat], 255, 255, 255))
             frame:AddLine(text)--, (v < 0) and 1 or 0, (v > 0) and 1 or 0, 0)
         end

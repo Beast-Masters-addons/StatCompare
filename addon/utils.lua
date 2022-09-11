@@ -45,3 +45,16 @@ function utils.compare_stats(base, compare)
 
     return diff
 end
+
+function utils.parseFloat(float)
+    local num = float:gsub(_G.DECIMAL_SEPERATOR, '.')
+    return tonumber(num)
+end
+
+function utils.formatFloat(float)
+    return tostring(float):gsub('%.', _G.DECIMAL_SEPERATOR)
+end
+
+function utils.isFloat(num)
+    return num % 1 == 0
+end
