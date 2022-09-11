@@ -26,6 +26,20 @@ function parser:armor()
     end
 end
 
+---Get speed from tooltip
+function parser:speed()
+    local frame = self.tooltip:GetName()
+    for i = 3, self.tooltip:NumLines() do
+        local text = _G[frame .. "TextRight" .. i]:GetText()
+        if text then
+            local match = text:match(_G.SPEED .. '%s([%d%p]+)')
+            if match then
+                return addon.utils.parseFloat(match)
+            end
+        end
+    end
+end
+
 ---Get stats from tooltip
 function parser:stats()
     local _, link = self.tooltip:GetItem()
@@ -35,6 +49,7 @@ function parser:stats()
         stats = _G.GetItemStats(link)
     end
     stats['STAT_ARMOR'] = self:armor()
+    stats['SPEED'] = self:speed()
 
     return stats
 end
