@@ -23,4 +23,4 @@ libs.xml
 addon\common.lua
 addon\utils.lua
 addon\tooltip_parser.lua
-addon\tooltip.lua
+addon\compare.lua
