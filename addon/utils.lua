@@ -47,8 +47,10 @@ function utils.compare_stats(base, compare)
 end
 
 function utils.parseFloat(float)
-    local num = float:gsub(_G.DECIMAL_SEPERATOR, '.')
-    return tonumber(num)
+    if _G.DECIMAL_SEPERATOR ~= '.' then
+        float = float:gsub(_G.DECIMAL_SEPERATOR, '.')
+    end
+    return tonumber(float)
 end
 
 function utils.formatFloat(float)
